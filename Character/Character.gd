@@ -15,7 +15,6 @@ func receive_damage(repulsionVelocity:Vector2):
 	$HitTimer.start()
 	lifes -= 1
 	change_life.emit(lifes)
-	print(lifes)
 	
 func _physics_process(delta):
 	if not unmove:
