@@ -2,9 +2,13 @@ extends Control
 
 @export var numToGenerate = 5
 var numGenerated = 0
+var numWins = 0
 var player
 
-# Called when the node enters the scene tree for the first time.
+func activate():
+	$Timer.start()
+	player.unmove = true
+
 func _ready():
 	$ValidationZone.new_position()
 	var nodes = get_tree().get_nodes_in_group("player")
@@ -12,9 +16,6 @@ func _ready():
 		player = nodes[0]
 		if player.has_signal("on_arrow_move"):
 			player.connect("on_arrow_move",_on_player_arrow_just_pressed)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func on_spawn():
 	numGenerated+=1
@@ -26,11 +27,23 @@ func _on_player_arrow_just_pressed(value:int):
 	var nodes = get_tree().get_nodes_in_group("arrow")
 	var win = false
 	for node in nodes:
-		if validZone.x > node.position.y and node.position.y > validZone.y and \
-			node.has_method("get_type") and node.get_type() == value:
+		if node.has_method("get_pos_y") and validZone.x < node.get_pos_y() and \
+		node.get_pos_y() < validZone.y and node.has_method("get_type") and node.get_type() == value:
 			win = true
+			node.queue_free()
 		
 	if win:
-		print("win")
+		numWins += 1
+		if(numWins >= numToGenerate):
+			player.receive_health()
+			player.unmove = false
+			numWins = 0
+			numGenerated = 0
 	else:
-		print("loose")
+		$Timer.stop()
+		numWins = 0
+		numGenerated = 0
+		player.receive_damage(Vector2(0,0))
+		for node in nodes:
+			node.queue_free()
+		$Timer.start()

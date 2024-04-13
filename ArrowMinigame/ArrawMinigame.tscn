@@ -28,7 +28,7 @@ color = Color(0.172549, 0.172549, 0.172549, 1)
 autostart = true
 script = ExtResource("1_i3nwi")
 sceneToSpawnList = Array[PackedScene]([ExtResource("2_o2kht")])
-limitX = Vector2(20, 40)
+limitX = Vector2(0, 20)
 
 [node name="ValidationZone" type="ColorRect" parent="."]
 layout_mode = 1

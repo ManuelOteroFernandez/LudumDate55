@@ -10,9 +10,12 @@ const SPEED = 12000.0
 
 var unmove = false
 
+func receive_health():
+	lifes = 4
+	on_receive_damage.emit(lifes)
+
 func receive_damage(repulsionVelocity:Vector2):
 	velocity = repulsionVelocity
-	unmove = true
 	$HitTimer.start()
 	lifes -= 1
 	on_receive_damage.emit(lifes)
@@ -29,7 +32,7 @@ func _process(delta):
 			on_arrow_move.emit(GLOBAL.DIRECTIONS.RIGHT)
 
 func _physics_process(delta):
-	if not unmove:
+	if not unmove and $HitTimer.is_stopped():
 		var directionX = Input.get_axis("ui_left", "ui_right")
 		if directionX < 0: 
 			velocity.x = directionX * SPEED * delta
@@ -59,6 +62,5 @@ func _physics_process(delta):
 		
 	move_and_slide()
 
-
 func _on_hit_timer_timeout():
-	unmove = false
+	$HitTimer.stop()
