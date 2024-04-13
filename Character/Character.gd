@@ -19,6 +19,8 @@ func receive_damage(repulsionVelocity:Vector2):
 	$HitTimer.start()
 	lifes -= 1
 	on_receive_damage.emit(lifes)
+	if lifes <= 0:
+		get_tree().change_scene_to_file("res://lose_screen.tscn")
 	
 func _process(_delta):
 	if unmove:
