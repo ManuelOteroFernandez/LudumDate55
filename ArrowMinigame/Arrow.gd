@@ -16,3 +16,5 @@ func _ready():
 
 func _process(delta):
 	position.y += delta * SPEED
+	if position.y > 1000:
+		queue_free()

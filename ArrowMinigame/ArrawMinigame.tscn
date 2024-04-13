@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://clqcbp23cleeg"]
+[gd_scene load_steps=5 format=3 uid="uid://clqcbp23cleeg"]
 
+[ext_resource type="Script" path="res://ArrowMinigame/ArrawMinigame.gd" id="1_6rktu"]
 [ext_resource type="Script" path="res://Generacion.gd" id="1_i3nwi"]
 [ext_resource type="PackedScene" uid="uid://c3ky0xlyknccd" path="res://ArrowMinigame/Arrow.tscn" id="2_o2kht"]
+[ext_resource type="Script" path="res://ArrowMinigame/ValidationZone.gd" id="4_vig55"]
 
 [node name="ArrowMinigame" type="Control"]
 layout_mode = 3
@@ -10,9 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_i3nwi")
-sceneToSpawnList = Array[PackedScene]([ExtResource("2_o2kht")])
-limitX = Vector2(20, 20)
+script = ExtResource("1_6rktu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -26,5 +26,22 @@ color = Color(0.172549, 0.172549, 0.172549, 1)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+script = ExtResource("1_i3nwi")
+sceneToSpawnList = Array[PackedScene]([ExtResource("2_o2kht")])
+limitX = Vector2(20, 40)
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="ValidationZone" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 581.0
+offset_right = -1032.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.403922, 0.776471, 0.356863, 1)
+script = ExtResource("4_vig55")
+
+[connection signal="timeout" from="Timer" to="." method="on_spawn"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timer_timeout"]

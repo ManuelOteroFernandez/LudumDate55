@@ -1,6 +1,7 @@
 class_name Character extends CharacterBody2D
 
-signal change_life(newValue:int)
+signal on_receive_damage(newValue:int)
+signal on_arrow_move(direction:int)
 
 @export var limits = Vector4(0,0,1100,600)
 @export var lifes = 4
@@ -14,8 +15,19 @@ func receive_damage(repulsionVelocity:Vector2):
 	unmove = true
 	$HitTimer.start()
 	lifes -= 1
-	change_life.emit(lifes)
+	on_receive_damage.emit(lifes)
 	
+func _process(delta):
+	if unmove:
+		if Input.is_action_just_pressed("ui_up"):
+			on_arrow_move.emit(GLOBAL.DIRECTIONS.UP)
+		if Input.is_action_just_pressed("ui_down"):
+			on_arrow_move.emit(GLOBAL.DIRECTIONS.DOWN)
+		if Input.is_action_just_pressed("ui_left"):
+			on_arrow_move.emit(GLOBAL.DIRECTIONS.LEFT)
+		if Input.is_action_just_pressed("ui_right"):
+			on_arrow_move.emit(GLOBAL.DIRECTIONS.RIGHT)
+
 func _physics_process(delta):
 	if not unmove:
 		var directionX = Input.get_axis("ui_left", "ui_right")

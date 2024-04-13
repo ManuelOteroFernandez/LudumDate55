@@ -4,9 +4,9 @@ extends Control
 @export var character:Character
 
 func _ready():
-	character.connect("change_life",_on_character_change_life)
+	character.connect("on_receive_damage",_on_character_on_receive_damage)
 
-func _on_character_change_life(newLife:int):
+func _on_character_on_receive_damage(newLife:int):
 	if newLife >= 4:
 		$Life4.visible = true
 	elif newLife == 3:

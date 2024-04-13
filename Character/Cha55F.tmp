@@ -31,7 +31,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Character" type="CharacterBody2D" groups=["player"]]
+[node name="Character" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_uee8d")
 
@@ -42,7 +42,7 @@ shape = SubResource("CapsuleShape2D_criwa")
 sprite_frames = SubResource("SpriteFrames_n35rb")
 animation = &"swim"
 
-[node name="HitTimer" type="Timer" parent="."]
+[node name="HitTimer" type="Timer" parent="." groups=["player"]]
 wait_time = 0.3
 
 [connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
