@@ -25,13 +25,13 @@ func receive_damage(repulsionVelocity:Vector2):
 func _process(_delta):
 	if unmove:
 		if Input.is_action_just_pressed("ui_up"):
-			on_arrow_move.emit(GLOBAL.DIRECTIONS.UP)
+			on_arrow_move.emit(Global.DIRECTIONS.UP)
 		if Input.is_action_just_pressed("ui_down"):
-			on_arrow_move.emit(GLOBAL.DIRECTIONS.DOWN)
+			on_arrow_move.emit(Global.DIRECTIONS.DOWN)
 		if Input.is_action_just_pressed("ui_left"):
-			on_arrow_move.emit(GLOBAL.DIRECTIONS.LEFT)
+			on_arrow_move.emit(Global.DIRECTIONS.LEFT)
 		if Input.is_action_just_pressed("ui_right"):
-			on_arrow_move.emit(GLOBAL.DIRECTIONS.RIGHT)
+			on_arrow_move.emit(Global.DIRECTIONS.RIGHT)
 
 func _physics_process(delta):
 	if not unmove and $HitTimer.is_stopped():

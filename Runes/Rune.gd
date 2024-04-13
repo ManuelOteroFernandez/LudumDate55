@@ -15,7 +15,7 @@ func _process(delta):
 	if playerIn:
 		$TextureProgressBar.value += delta * SPEED_COLLECT
 		if $TextureProgressBar.value >= 100:
-			print("WIN rune")
+			Global.collect_rune()
 			queue_free()
 	else:
 		$TextureProgressBar.value -= delta * SPEED_COLLECT
