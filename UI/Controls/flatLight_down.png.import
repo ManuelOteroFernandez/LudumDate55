@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b158xyo5b3qti"
-path="res://.godot/imported/flat-dark.png-5820214baa4d529c982673ada1710ba6.ctex"
+uid="uid://b0w77f6268004"
+path="res://.godot/imported/flatLight_down.png-084844739f00a5f49fbd46d4677c0992.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Controls/flat-dark.png"
-dest_files=["res://.godot/imported/flat-dark.png-5820214baa4d529c982673ada1710ba6.ctex"]
+source_file="res://UI/Controls/flatLight_down.png"
+dest_files=["res://.godot/imported/flatLight_down.png-084844739f00a5f49fbd46d4677c0992.ctex"]
 
 [params]
 

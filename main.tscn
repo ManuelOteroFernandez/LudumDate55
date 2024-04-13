@@ -42,6 +42,7 @@ limits = Vector4(220, 0, 1125, 610)
 [node name="MoveTouchButtons" parent="CanvasLayer" instance=ExtResource("6_65wws")]
 
 [node name="ActivatorArrorMiniGame" type="Timer" parent="CanvasLayer"]
+wait_time = 55.0
 autostart = true
 script = ExtResource("6_i0y5o")
 
