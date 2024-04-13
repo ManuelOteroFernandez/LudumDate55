@@ -20,7 +20,7 @@ func receive_damage(repulsionVelocity:Vector2):
 	lifes -= 1
 	on_receive_damage.emit(lifes)
 	
-func _process(delta):
+func _process(_delta):
 	if unmove:
 		if Input.is_action_just_pressed("ui_up"):
 			on_arrow_move.emit(GLOBAL.DIRECTIONS.UP)
