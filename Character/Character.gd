@@ -1,9 +1,15 @@
-extends CharacterBody2D
+class_name Character extends CharacterBody2D
+
+signal change_life(newValue:int)
 
 @export var limits = Vector4(0,0,1100,600)
+@export var lifes = 5
+const SPEED = 12000.0
 
-const SPEED = 10000.0
-
+func get_damage():
+	lifes -= 1
+	change_life.emit(lifes)
+	
 func _physics_process(delta):
 	var directionX = Input.get_axis("ui_left", "ui_right")
 	
