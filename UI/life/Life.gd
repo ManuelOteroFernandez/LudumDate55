@@ -1,7 +1,7 @@
 extends Control
 
-
-@export var character:Character
+#const Character = load("res://Character/Character.tscn")
+@export var character:Node
 
 func _ready():
 	character.connect("on_receive_damage",_on_character_on_receive_damage)
