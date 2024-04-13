@@ -8,7 +8,9 @@ var player
 func activate():
 	$Timer.start()
 	player.unmove = true
-
+	$ValidationZone.new_position()
+	$ColorRect2.visible = true
+	
 func _ready():
 	$ValidationZone.new_position()
 	var nodes = get_tree().get_nodes_in_group("player")
@@ -39,6 +41,7 @@ func _on_player_arrow_just_pressed(value:int):
 			player.unmove = false
 			numWins = 0
 			numGenerated = 0
+			$ColorRect2.visible = false
 	else:
 		$Timer.stop()
 		numWins = 0

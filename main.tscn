@@ -20,7 +20,6 @@ sceneToSpawnList = Array[PackedScene]([ExtResource("6_t6jt1")])
 limitX = Vector2(130, 1000)
 
 [node name="Timer" type="Timer" parent="Generacion"]
-wait_time = 2.0
 autostart = true
 
 [node name="RuneGenerator" type="Node" parent="."]
@@ -29,7 +28,7 @@ sceneToSpawnList = Array[PackedScene]([ExtResource("8_1trgs")])
 limitX = Vector2(130, 1000)
 
 [node name="Timer" type="Timer" parent="RuneGenerator"]
-wait_time = 30.0
+wait_time = 35.0
 autostart = true
 
 [node name="Character" parent="." instance=ExtResource("2_38t7b")]
@@ -45,12 +44,11 @@ offset_right = -8.0
 offset_bottom = -493.0
 
 [node name="ActivatorArrorMiniGame" type="Timer" parent="CanvasLayer"]
-wait_time = 60.0
+wait_time = 55.0
 autostart = true
 script = ExtResource("6_i0y5o")
 
 [node name="ArrowMiniGame" parent="CanvasLayer/ActivatorArrorMiniGame" instance=ExtResource("5_jeoot")]
-visible = false
 
 [connection signal="timeout" from="Generacion/Timer" to="Generacion" method="_on_timer_timeout"]
 [connection signal="timeout" from="RuneGenerator/Timer" to="RuneGenerator" method="_on_timer_timeout"]
