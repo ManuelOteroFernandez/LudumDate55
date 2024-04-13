@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://37pqo5ftxv7f"]
-
 [ext_resource type="PackedScene" uid="uid://dy674427vjppa" path="res://Enviroment/background.tscn" id="1_nb1jo"]
 [ext_resource type="PackedScene" uid="uid://dixt0qf3tubai" path="res://Character/Character.tscn" id="2_38t7b"]
 [ext_resource type="Script" path="res://Generacion.gd" id="2_sdnt2"]
 [ext_resource type="PackedScene" uid="uid://deqmvmu6gg0my" path="res://UI/life/Life.tscn" id="4_p2nbt"]
 [ext_resource type="PackedScene" uid="uid://clqcbp23cleeg" path="res://ArrowMinigame/ArrawMinigame.tscn" id="5_jeoot"]
+[ext_resource type="Script" path="res://ActivatorArrorMiniGame.gd" id="6_i0y5o"]
 [ext_resource type="PackedScene" uid="uid://htn6dm7acnmi" path="res://Enemies/Enemy.tscn" id="6_t6jt1"]
+[ext_resource type="PackedScene" uid="uid://bd8lfbcypsas1" path="res://Runes/Rune.tscn" id="8_1trgs"]
 
 [node name="Node2D" type="Node2D"]
 texture_repeat = 2
@@ -18,21 +18,36 @@ sceneToSpawnList = Array[PackedScene]([ExtResource("6_t6jt1")])
 limitX = Vector2(130, 1000)
 
 [node name="Timer" type="Timer" parent="Generacion"]
-wait_time = 2.0
+autostart = true
+
+[node name="RuneGenerator" type="Node" parent="."]
+script = ExtResource("2_sdnt2")
+sceneToSpawnList = Array[PackedScene]([ExtResource("8_1trgs")])
+limitX = Vector2(130, 1000)
+
+[node name="Timer" type="Timer" parent="RuneGenerator"]
+wait_time = 35.0
 autostart = true
 
 [node name="Character" parent="." instance=ExtResource("2_38t7b")]
+z_index = 10
 position = Vector2(513, 260)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ArrowMiniGame" parent="CanvasLayer" instance=ExtResource("5_jeoot")]
+[node name="Life" parent="CanvasLayer" instance=ExtResource("4_p2nbt")]
+offset_left = 1012.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -493.0
 
-[node name="Life" parent="CanvasLayer" node_paths=PackedStringArray("character") instance=ExtResource("4_p2nbt")]
-offset_left = 778.0
-offset_top = 131.0
-offset_right = 778.0
-offset_bottom = 131.0
-character = NodePath("../../Character")
+[node name="ActivatorArrorMiniGame" type="Timer" parent="CanvasLayer"]
+wait_time = 55.0
+autostart = true
+script = ExtResource("6_i0y5o")
+
+[node name="ArrowMiniGame" parent="CanvasLayer/ActivatorArrorMiniGame" instance=ExtResource("5_jeoot")]
 
 [connection signal="timeout" from="Generacion/Timer" to="Generacion" method="_on_timer_timeout"]
+[connection signal="timeout" from="RuneGenerator/Timer" to="RuneGenerator" method="_on_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/ActivatorArrorMiniGame" to="CanvasLayer/ActivatorArrorMiniGame" method="_on_timeout"]

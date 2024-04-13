@@ -1,6 +1,6 @@
-extends Control
+extends TextureRect
 
-const SPEED = 100.0
+const SPEED = 300.0
 
 var typeList = {
 	GLOBAL.DIRECTIONS.UP:load('res://ArrowMinigame/steamdeck_dpad_up.png'),
@@ -10,11 +10,18 @@ var typeList = {
 }
 var type:int = GLOBAL.DIRECTIONS.UP 
 
+func get_type():
+	return type
+	
+func get_pos_y():
+	return position.y + 30
+
 func _ready():
 	type = randi_range(0,len(typeList)-1)
-	$TextureRect.texture = typeList[type]
+	texture = typeList[type]
 
 func _process(delta):
 	position.y += delta * SPEED
-	if position.y > 1000:
-		queue_free()
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	queue_free()
