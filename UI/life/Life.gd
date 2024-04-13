@@ -1,10 +1,10 @@
 extends Control
 
-
-@export var character:Character
-
 func _ready():
-	character.connect("on_receive_damage",_on_character_on_receive_damage)
+	var nodes = get_tree().get_nodes_in_group("player")
+	if len(nodes) > 0:
+		var player = nodes[0]
+		player.connect("on_receive_damage",_on_character_on_receive_damage)
 
 func _on_character_on_receive_damage(newLife:int):
 	if newLife >= 4:
