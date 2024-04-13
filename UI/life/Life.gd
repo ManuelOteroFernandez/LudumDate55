@@ -1,5 +1,4 @@
 extends Control
-
 func _ready():
 	var nodes = get_tree().get_nodes_in_group("player")
 	if len(nodes) > 0:

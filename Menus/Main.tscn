@@ -1,0 +1,114 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkgcr0hefh684"]
+
+[ext_resource type="Texture2D" uid="uid://bhjeobkfe3yx0" path="res://Menus/fondo.png" id="1_sq60x"]
+[ext_resource type="Script" path="res://Menus/Main.gd" id="1_whktj"]
+[ext_resource type="Texture2D" uid="uid://c10eh7q0efwck" path="res://Menus/particulilla.png" id="2_nhxib"]
+
+[sub_resource type="SystemFont" id="SystemFont_5e3b1"]
+font_names = PackedStringArray("Scheherazade", "Gadugi", "Sylfaen", "Trebuchet MS", "Sitka Subheading")
+
+[sub_resource type="SystemFont" id="SystemFont_pxpiy"]
+font_names = PackedStringArray("Scheherazade", "", "", "", "")
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_whktj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_sq60x")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_5e3b1")
+theme_override_font_sizes/font_size = 60
+text = "The Abyss"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Sep2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_pxpiy")
+theme_override_font_sizes/font_size = 30
+text = "Start"
+
+[node name="Sep3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_pxpiy")
+theme_override_font_sizes/font_size = 30
+text = "asmoranomardicadaistimaculdacar"
+
+[node name="Pivote" type="Node2D" parent="."]
+position = Vector2(573, 338)
+
+[node name="GPUParticles2D2" type="CPUParticles2D" parent="Pivote"]
+position = Vector2(2, 177)
+rotation = 1.5708
+amount = 1000
+lifetime = 8.0
+texture = ExtResource("2_nhxib")
+spread = 14.04
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+tangential_accel_min = 1.95
+tangential_accel_max = 1.95
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="Pivote"]
+position = Vector2(3, -185)
+rotation = -1.4748
+amount = 1000
+lifetime = 10.0
+texture = ExtResource("2_nhxib")
+spread = 14.04
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+tangential_accel_min = 1.95
+tangential_accel_max = 1.95
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cde5imcgpum8b"]
+[gd_scene load_steps=7 format=3 uid="uid://dixt0qf3tubai"]
 
 [ext_resource type="PackedScene" uid="uid://dy674427vjppa" path="res://Enviroment/background.tscn" id="1_nb1jo"]
-[ext_resource type="PackedScene" uid="uid://dsi46fcd837s2" path="res://Character/Character.tscn" id="2_38t7b"]
+[ext_resource type="PackedScene" uid="uid://dixt0qf3tubai" path="res://Character/Character.tscn" id="2_38t7b"]
 [ext_resource type="Script" path="res://Generacion.gd" id="2_sdnt2"]
 [ext_resource type="PackedScene" uid="uid://deqmvmu6gg0my" path="res://UI/life/Life.tscn" id="4_p2nbt"]
 [ext_resource type="PackedScene" uid="uid://clqcbp23cleeg" path="res://ArrowMinigame/ArrawMinigame.tscn" id="5_jeoot"]
