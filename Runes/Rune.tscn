@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://crasrw1ss6hh5" path="res://icon.svg" id="2_k8fas"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdrwu"]
-size = Vector2(59, 96)
+size = Vector2(29.5, 52)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0gn5r"]
 atlas = ExtResource("1_85igk")
@@ -274,6 +274,7 @@ script = ExtResource("1_ul0s0")
 shape = SubResource("RectangleShape2D_xdrwu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_2ohv7")
 frame = 12
 
@@ -287,8 +288,8 @@ fill_mode = 4
 texture_progress = ExtResource("2_k8fas")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-1.5, -1)
-scale = Vector2(3.25, 5.3)
+position = Vector2(-0.5, -1.90735e-06)
+scale = Vector2(1.55, 2.6)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
