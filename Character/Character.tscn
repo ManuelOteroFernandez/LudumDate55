@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://dsi46fcd837s2"]
+
+[ext_resource type="Texture2D" uid="uid://ci4w7iptacjek" path="res://Character/alienBlue_hurt.png" id="1_0wl0f"]
+[ext_resource type="Script" path="res://Character/Character.gd" id="1_uee8d"]
+[ext_resource type="Texture2D" uid="uid://cgxsweh2kpjqh" path="res://Character/alienBlue_swim1.png" id="2_guaf8"]
+[ext_resource type="Texture2D" uid="uid://v04tmu2ql43q" path="res://Character/alienBlue_swim2.png" id="3_lqmh0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_criwa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n35rb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0wl0f")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_guaf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lqmh0")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 5.0
+}]
+
+[node name="Character" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_uee8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_criwa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_n35rb")
+animation = &"swim"
