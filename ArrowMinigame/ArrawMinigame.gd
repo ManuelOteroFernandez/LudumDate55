@@ -4,12 +4,16 @@ extends Control
 var numGenerated = 0
 var numWins = 0
 var player
+var _is_active = false
+func is_active():
+	return _is_active
 
 func activate():
 	$Timer.start()
 	player.unmove = true
 	$ValidationZone.new_position()
 	$ColorRect2.visible = true
+	_is_active = true
 	
 func _ready():
 	$ValidationZone.new_position()
@@ -42,6 +46,7 @@ func _on_player_arrow_just_pressed(value:int):
 			numWins = 0
 			numGenerated = 0
 			$ColorRect2.visible = false
+			_is_active = false
 	else:
 		$Timer.stop()
 		numWins = 0

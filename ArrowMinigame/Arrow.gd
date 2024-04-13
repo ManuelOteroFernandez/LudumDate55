@@ -1,6 +1,6 @@
 extends TextureRect
 
-const SPEED = 300.0
+const SPEED = 250.0
 
 var typeList = {
 	Global.DIRECTIONS.UP:load('res://ArrowMinigame/steamdeck_dpad_up.png'),
