@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy674427vjppa"]
+
+[ext_resource type="Texture2D" uid="uid://dwaht1ytj7xnp" path="res://Enviroment/background.jpg" id="1_tl64y"]
+[ext_resource type="Script" path="res://Enviroment/background.gd" id="2_lrn5t"]
+
+[node name="Background" type="Sprite2D"]
+texture = ExtResource("1_tl64y")
+centered = false
+offset = Vector2(0, -1296)
+script = ExtResource("2_lrn5t")
