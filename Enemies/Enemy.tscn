@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://htn6dm7acnmi"]
+
+[ext_resource type="Texture2D" uid="uid://clqvvdwvk14hs" path="res://Enemies/enemies.png" id="1_t7577"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wmuly"]
+radius = 22.0
+height = 56.0
+
+[node name="Enemy" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t7577")
+region_enabled = true
+region_rect = Rect2(371, 386, 51, 73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_wmuly")
