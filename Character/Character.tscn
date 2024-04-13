@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dixt0qf3tubai"]
+[gd_scene load_steps=7 format=3 uid="uid://dsi46fcd837s2"]
 
 [ext_resource type="Texture2D" uid="uid://ci4w7iptacjek" path="res://Character/alienBlue_hurt.png" id="1_0wl0f"]
 [ext_resource type="Script" path="res://Character/Character.gd" id="1_uee8d"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://v04tmu2ql43q" path="res://Character/alienBlue_swim2.png" id="3_lqmh0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_criwa"]
+radius = 29.0
+height = 78.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n35rb"]
 animations = [{
@@ -39,3 +41,8 @@ shape = SubResource("CapsuleShape2D_criwa")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 sprite_frames = SubResource("SpriteFrames_n35rb")
 animation = &"swim"
+
+[node name="HitTimer" type="Timer" parent="."]
+wait_time = 0.3
+
+[connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
