@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://37pqo5ftxv7f"]
+[gd_scene load_steps=7 format=3 uid="uid://cde5imcgpum8b"]
 
 [ext_resource type="PackedScene" uid="uid://dy674427vjppa" path="res://Enviroment/background.tscn" id="1_nb1jo"]
+[ext_resource type="PackedScene" uid="uid://dsi46fcd837s2" path="res://Character/Character.tscn" id="2_38t7b"]
 [ext_resource type="Script" path="res://Generacion.gd" id="2_sdnt2"]
+[ext_resource type="PackedScene" uid="uid://deqmvmu6gg0my" path="res://UI/life/Life.tscn" id="4_p2nbt"]
+[ext_resource type="PackedScene" uid="uid://clqcbp23cleeg" path="res://ArrowMinigame/ArrawMinigame.tscn" id="5_jeoot"]
+[ext_resource type="PackedScene" uid="uid://htn6dm7acnmi" path="res://Enemies/Enemy.tscn" id="6_t6jt1"]
 
 [node name="Node2D" type="Node2D"]
 texture_repeat = 2
@@ -10,9 +14,25 @@ texture_repeat = 2
 
 [node name="Generacion" type="Node" parent="."]
 script = ExtResource("2_sdnt2")
+sceneToSpawnList = Array[PackedScene]([ExtResource("6_t6jt1")])
+limitX = Vector2(130, 1000)
 
 [node name="Timer" type="Timer" parent="Generacion"]
 wait_time = 2.0
 autostart = true
+
+[node name="Character" parent="." instance=ExtResource("2_38t7b")]
+position = Vector2(513, 260)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ArrowMiniGame" parent="CanvasLayer" instance=ExtResource("5_jeoot")]
+
+[node name="Life" parent="CanvasLayer" node_paths=PackedStringArray("character") instance=ExtResource("4_p2nbt")]
+offset_left = 778.0
+offset_top = 131.0
+offset_right = 778.0
+offset_bottom = 131.0
+character = NodePath("../../Character")
 
 [connection signal="timeout" from="Generacion/Timer" to="Generacion" method="_on_timer_timeout"]

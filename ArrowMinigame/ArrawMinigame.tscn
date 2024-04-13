@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://clqcbp23cleeg"]
+
+[ext_resource type="Script" path="res://Generacion.gd" id="1_i3nwi"]
+[ext_resource type="PackedScene" uid="uid://c3ky0xlyknccd" path="res://ArrowMinigame/Arrow.tscn" id="2_o2kht"]
+
+[node name="ArrowMinigame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i3nwi")
+sceneToSpawnList = Array[PackedScene]([ExtResource("2_o2kht")])
+limitX = Vector2(20, 20)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1032.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.172549, 0.172549, 0.172549, 1)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
