@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dkgcr0hefh684"]
+[gd_scene load_steps=32 format=3 uid="uid://dkgcr0hefh684"]
 
 [ext_resource type="Texture2D" uid="uid://bhjeobkfe3yx0" path="res://Menus/fondo.png" id="1_sq60x"]
 [ext_resource type="Script" path="res://Menus/Main.gd" id="1_whktj"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cdl4dqxtl12nl" path="res://Menus/titulo-abyss-Sheet.png" id="3_u448m"]
 [ext_resource type="Texture2D" uid="uid://bn232vq7slfw" path="res://Menus/start-normal.png" id="4_s5yye"]
 [ext_resource type="Texture2D" uid="uid://c6782jn5m7h4y" path="res://Menus/start-hover.png" id="5_bwloa"]
+[ext_resource type="AudioStream" uid="uid://c56a3cfedfay8" path="res://Music/Lurking in Limbo.mp3" id="7_tvgb8"]
+[ext_resource type="AudioStream" uid="uid://bygwkp83oqqaw" path="res://Sounds/UI_button05.wav" id="8_c0mk8"]
+[ext_resource type="AudioStream" uid="uid://d2ttvtuj8ucqt" path="res://Sounds/UI_button20.wav" id="9_sbpdp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1167u"]
 atlas = ExtResource("3_u448m")
@@ -293,5 +296,16 @@ scale_amount_max = 15.0
 scale_amount_curve = SubResource("Curve_6bvba")
 color_ramp = SubResource("Gradient_5tvvj")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_tvgb8")
+autoplay = true
+
+[node name="botonSonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_c0mk8")
+
+[node name="botonSonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_sbpdp")
+
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Button/TouchScreenButton" to="." method="_on_button_pressed"]

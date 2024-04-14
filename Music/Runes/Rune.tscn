@@ -1,8 +1,8 @@
 [gd_scene load_steps=42 format=3 uid="uid://bd8lfbcypsas1"]
 
-[ext_resource type="Texture2D" uid="uid://bfjtse32d73l0" path="res://Runes/runeBlue_slabOutline_sheet.png" id="1_85igk"]
-[ext_resource type="Script" path="res://Runes/Rune.gd" id="1_ul0s0"]
-[ext_resource type="Texture2D" uid="uid://sjef1jhr7yyt" path="res://Runes/circleCollect.png" id="3_5v6px"]
+[ext_resource type="Texture2D" uid="uid://bfjtse32d73l0" path="res://Music/Runes/runeBlue_slabOutline_sheet.png" id="1_85igk"]
+[ext_resource type="Script" path="res://Music/Runes/Rune.gd" id="1_ul0s0"]
+[ext_resource type="Texture2D" uid="uid://sjef1jhr7yyt" path="res://Music/Runes/circleCollect.png" id="3_5v6px"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdrwu"]
 size = Vector2(29.5, 52)

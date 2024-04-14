@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c56a3cfedfay8"
+path="res://.godot/imported/Lurking in Limbo.mp3-3692fae9e35eca2403fc124cfd06e6f5.mp3str"
+
+[deps]
+
+source_file="res://Music/Lurking in Limbo.mp3"
+dest_files=["res://.godot/imported/Lurking in Limbo.mp3-3692fae9e35eca2403fc124cfd06e6f5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bg6nihipqj2ex"
+path="res://.godot/imported/Phantasmal Platforms.mp3-c639f7f435de2e593e15fe3174e1f688.mp3str"
+
+[deps]
+
+source_file="res://Music/Phantasmal Platforms.mp3"
+dest_files=["res://.godot/imported/Phantasmal Platforms.mp3-c639f7f435de2e593e15fe3174e1f688.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

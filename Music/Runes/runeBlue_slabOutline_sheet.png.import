@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5lred2y58j46"
-path="res://.godot/imported/runeBlue_rectangle_sheet.png-e777e0500dc60a3b41d80ecffdd02452.ctex"
+uid="uid://bfjtse32d73l0"
+path="res://.godot/imported/runeBlue_slabOutline_sheet.png-bf74df32d4f8434d24b6a0ee9d79f955.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Runes/runeBlue_rectangle_sheet.png"
-dest_files=["res://.godot/imported/runeBlue_rectangle_sheet.png-e777e0500dc60a3b41d80ecffdd02452.ctex"]
+source_file="res://Music/Runes/runeBlue_slabOutline_sheet.png"
+dest_files=["res://.godot/imported/runeBlue_slabOutline_sheet.png-bf74df32d4f8434d24b6a0ee9d79f955.ctex"]
 
 [params]
 

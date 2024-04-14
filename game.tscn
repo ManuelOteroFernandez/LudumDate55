@@ -1,16 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://cde5imcgpum8b"]
+[gd_scene load_steps=12 format=3 uid="uid://dews54neo83t6"]
 
 [ext_resource type="PackedScene" uid="uid://dy674427vjppa" path="res://Enviroment/background.tscn" id="1_aa7fl"]
 [ext_resource type="Script" path="res://Generacion.gd" id="2_wifv0"]
 [ext_resource type="PackedScene" uid="uid://htn6dm7acnmi" path="res://Enemies/Enemy.tscn" id="3_1dqjm"]
-[ext_resource type="PackedScene" uid="uid://bd8lfbcypsas1" path="res://Runes/Rune.tscn" id="4_esok7"]
-[ext_resource type="PackedScene" uid="uid://dsi46fcd837s2" path="res://Character/Character.tscn" id="5_535aq"]
-[ext_resource type="PackedScene" uid="uid://dks42so6tkkp4" path="res://UI/Controls/MoveTouchButtons.tscn" id="6_rpto6"]
+[ext_resource type="PackedScene" uid="uid://bd8lfbcypsas1" path="res://Music/Runes/Rune.tscn" id="4_esok7"]
+[ext_resource type="PackedScene" uid="uid://dixt0qf3tubai" path="res://Character/Character.tscn" id="5_535aq"]
+[ext_resource type="PackedScene" path="res://UI/Controls/MoveTouchButtons.tscn" id="6_rpto6"]
 [ext_resource type="Script" path="res://ArrowMinigame/ActivatorArrorMiniGame.gd" id="7_xfj2p"]
 [ext_resource type="PackedScene" uid="uid://clqcbp23cleeg" path="res://ArrowMinigame/ArrawMinigame.tscn" id="8_netnm"]
 [ext_resource type="PackedScene" uid="uid://deqmvmu6gg0my" path="res://UI/life/Life.tscn" id="9_x82kn"]
 [ext_resource type="Script" path="res://NumRunes.gd" id="10_50w7m"]
-[ext_resource type="Texture2D" uid="uid://c137tyuadniin" path="res://Runes/RuneGroup.png" id="10_t0uus"]
+[ext_resource type="Texture2D" uid="uid://c137tyuadniin" path="res://Music/Runes/RuneGroup.png" id="10_t0uus"]
 
 [node name="Node2D" type="Node2D"]
 texture_repeat = 2
