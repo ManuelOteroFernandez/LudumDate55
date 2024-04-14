@@ -26,4 +26,5 @@ func _process(delta):
 	position.y += delta * SPEED
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
+	on_screen_exited.emit()
 	queue_free()
