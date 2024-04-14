@@ -1,14 +1,156 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkgcr0hefh684"]
+[gd_scene load_steps=29 format=3 uid="uid://dkgcr0hefh684"]
 
 [ext_resource type="Texture2D" uid="uid://bhjeobkfe3yx0" path="res://Menus/fondo.png" id="1_sq60x"]
 [ext_resource type="Script" path="res://Menus/Main.gd" id="1_whktj"]
 [ext_resource type="Texture2D" uid="uid://c10eh7q0efwck" path="res://Menus/particulilla.png" id="2_nhxib"]
+[ext_resource type="Texture2D" uid="uid://cdl4dqxtl12nl" path="res://Menus/titulo-abyss-Sheet.png" id="3_u448m"]
+[ext_resource type="Texture2D" uid="uid://bn232vq7slfw" path="res://Menus/start-normal.png" id="4_s5yye"]
+[ext_resource type="Texture2D" uid="uid://c6782jn5m7h4y" path="res://Menus/start-hover.png" id="5_bwloa"]
 
-[sub_resource type="SystemFont" id="SystemFont_5e3b1"]
-font_names = PackedStringArray("Scheherazade", "Gadugi", "Sylfaen", "Trebuchet MS", "Sitka Subheading")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1167u"]
+atlas = ExtResource("3_u448m")
+region = Rect2(0, 0, 164, 100)
 
-[sub_resource type="SystemFont" id="SystemFont_pxpiy"]
-font_names = PackedStringArray("Scheherazade", "", "", "", "")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0om1n"]
+atlas = ExtResource("3_u448m")
+region = Rect2(164, 0, 164, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3iu5"]
+atlas = ExtResource("3_u448m")
+region = Rect2(328, 0, 164, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5d0r"]
+atlas = ExtResource("3_u448m")
+region = Rect2(492, 0, 164, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v58w"]
+atlas = ExtResource("3_u448m")
+region = Rect2(656, 0, 164, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3hvj"]
+atlas = ExtResource("3_u448m")
+region = Rect2(820, 0, 164, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40pad"]
+atlas = ExtResource("3_u448m")
+region = Rect2(984, 0, 164, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqtde"]
+atlas = ExtResource("3_u448m")
+region = Rect2(1148, 0, 164, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fl2i"]
+atlas = ExtResource("3_u448m")
+region = Rect2(1312, 0, 164, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l1ap"]
+atlas = ExtResource("3_u448m")
+region = Rect2(1476, 0, 164, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onejn"]
+atlas = ExtResource("3_u448m")
+region = Rect2(1640, 0, 164, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a2rc"]
+atlas = ExtResource("3_u448m")
+region = Rect2(1804, 0, 164, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaold"]
+atlas = ExtResource("3_u448m")
+region = Rect2(1968, 0, 164, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6u4v8"]
+atlas = ExtResource("3_u448m")
+region = Rect2(2132, 0, 164, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8n8s8"]
+atlas = ExtResource("3_u448m")
+region = Rect2(2296, 0, 164, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fn88l"]
+atlas = ExtResource("3_u448m")
+region = Rect2(2460, 0, 164, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xr73p"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1167u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0om1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3iu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5d0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4v58w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3hvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40pad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqtde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fl2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l1ap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onejn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8a2rc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yaold")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6u4v8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8n8s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fn88l")
+}],
+"loop": true,
+"name": &"titulo",
+"speed": 8.0
+}]
+
+[sub_resource type="Curve" id="Curve_1jtx7"]
+_data = [Vector2(0.257485, 1), 0.0, 0.0, 0, 0, Vector2(0.772455, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ycxw5"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.0359712, 0.705036)
+colors = PackedColorArray(0, 0, 0, 1, 0.966445, 0.966445, 0.966445, 1)
+
+[sub_resource type="Curve" id="Curve_a13eb"]
+_data = [Vector2(0.245509, 1), 0.0, 0.0, 0, 0, Vector2(0.754491, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_5tvvj"]
+offsets = PackedFloat32Array(0.0359712, 0.705036)
+
+[sub_resource type="Curve" id="Curve_6bvba"]
+_data = [Vector2(0.233533, 1), 0.0, 0.0, 0, 0, Vector2(0.754491, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -47,12 +189,11 @@ theme_override_constants/separation = 10
 [node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_5e3b1")
-theme_override_font_sizes/font_size = 60
-text = "The Abyss"
-horizontal_alignment = 1
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(551, 237)
+sprite_frames = SubResource("SpriteFrames_xr73p")
+animation = &"titulo"
+autoplay = "titulo"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -60,48 +201,78 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 18
+theme_override_constants/separation = 40
 alignment = 1
 
 [node name="Sep2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(120, 32)
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_pxpiy")
-theme_override_font_sizes/font_size = 30
-text = "Start"
-
 [node name="Sep3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Button" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_pxpiy")
-theme_override_font_sizes/font_size = 30
-text = "asmoranomardicadaistimaculdacar"
+texture_normal = ExtResource("4_s5yye")
+texture_hover = ExtResource("5_bwloa")
 
 [node name="Pivote" type="Node2D" parent="."]
-position = Vector2(573, 338)
+position = Vector2(572, 346)
 
 [node name="GPUParticles2D2" type="CPUParticles2D" parent="Pivote"]
 position = Vector2(2, 177)
 rotation = 1.5708
-amount = 1000
+amount = 80
 lifetime = 8.0
 texture = ExtResource("2_nhxib")
-spread = 14.04
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 80.0
+initial_velocity_max = 120.0
+tangential_accel_min = 1.95
+tangential_accel_max = 1.95
+scale_amount_min = 5.0
+scale_amount_max = 15.0
+scale_amount_curve = SubResource("Curve_1jtx7")
+color_ramp = SubResource("Gradient_ycxw5")
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="Pivote"]
+position = Vector2(3, -185)
+rotation = -1.4748
+amount = 80
+lifetime = 10.0
+texture = ExtResource("2_nhxib")
+spread = 15.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 100.0
 initial_velocity_max = 100.0
 tangential_accel_min = 1.95
 tangential_accel_max = 1.95
+scale_amount_min = 5.0
+scale_amount_max = 15.0
+scale_amount_curve = SubResource("Curve_a13eb")
+color_ramp = SubResource("Gradient_5tvvj")
 
-[node name="GPUParticles2D" type="CPUParticles2D" parent="Pivote"]
-position = Vector2(3, -185)
-rotation = -1.4748
-amount = 1000
+[node name="GPUParticles2D3" type="CPUParticles2D" parent="Pivote"]
+position = Vector2(-181, -5)
+rotation = -3.12414
+amount = 80
+lifetime = 10.0
+texture = ExtResource("2_nhxib")
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+tangential_accel_min = 1.95
+tangential_accel_max = 1.95
+scale_amount_min = 5.0
+scale_amount_max = 15.0
+scale_amount_curve = SubResource("Curve_6bvba")
+color_ramp = SubResource("Gradient_5tvvj")
+
+[node name="GPUParticles2D4" type="CPUParticles2D" parent="Pivote"]
+position = Vector2(202, -3)
+amount = 80
 lifetime = 10.0
 texture = ExtResource("2_nhxib")
 spread = 14.04
@@ -110,5 +281,9 @@ initial_velocity_min = 100.0
 initial_velocity_max = 100.0
 tangential_accel_min = 1.95
 tangential_accel_max = 1.95
+scale_amount_min = 5.0
+scale_amount_max = 15.0
+scale_amount_curve = SubResource("Curve_6bvba")
+color_ramp = SubResource("Gradient_5tvvj")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
