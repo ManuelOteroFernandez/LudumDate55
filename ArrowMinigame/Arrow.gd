@@ -12,6 +12,9 @@ var typeList = {
 }
 var type:int = Global.DIRECTIONS.UP 
 
+func set_position_x_spawn(limitX):
+	position = Vector2(randf_range(limitX.x,limitX.y), -30)
+	
 func get_type():
 	return type
 	
@@ -26,4 +29,5 @@ func _process(delta):
 	position.y += delta * SPEED
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
+	on_screen_exited.emit()
 	queue_free()

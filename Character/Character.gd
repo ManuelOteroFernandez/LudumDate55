@@ -13,6 +13,7 @@ const SPEED = 12000.0
 var unmove = false
 
 func liberate():
+	$SlimeSFX.stop()
 	unmove = false
 	on_liberate.emit()
 	$Trapper.visible = false
@@ -22,6 +23,8 @@ func receive_health():
 	on_receive_damage.emit(lifes)
 
 func receive_damage(repulsionVelocity:Vector2):
+	
+	$CollisionShape2D/AnimatedSprite2D.play("hurt")
 	velocity = repulsionVelocity
 	$HitTimer.start()
 	lifes -= 1
@@ -44,8 +47,10 @@ func _physics_process(delta):
 	if not unmove and $HitTimer.is_stopped():
 		var directionX = Input.get_axis("ui_left", "ui_right")
 		if directionX < 0: 
+			$CollisionShape2D/AnimatedSprite2D.flip_h = true
 			velocity.x = directionX * SPEED * delta
 		elif directionX > 0:
+			$CollisionShape2D/AnimatedSprite2D.flip_h = false
 			velocity.x = directionX * SPEED * delta
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -73,9 +78,11 @@ func _physics_process(delta):
 
 func _on_hit_timer_timeout():
 	$HitTimer.stop()
+	$CollisionShape2D/AnimatedSprite2D.play("swim")
 	
 func trapped(trapper:Texture2D):
 	$Trapper.texture = trapper
 	$Trapper.visible = true
 	unmove = true
 	on_trapped.emit()
+	$SlimeSFX.play()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddsx5qelrxq2b"]
+[gd_scene load_steps=7 format=3 uid="uid://ddsx5qelrxq2b"]
 
 [ext_resource type="Script" path="res://Enemies/TrapperEnemy.gd" id="1_d5gff"]
 [ext_resource type="Texture2D" uid="uid://dvxlitqymq2ol" path="res://Enemies/slimeGreen.png" id="2_uhhyp"]
 [ext_resource type="Texture2D" uid="uid://60mcselan5xa" path="res://Enemies/slimeGreen_walk.png" id="3_r7m31"]
+[ext_resource type="AudioStream" uid="uid://dtcf6dl1l8e6p" path="res://Sounds/slime_000.ogg" id="4_mmcws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdrwu"]
 size = Vector2(53.75, 42.5)
@@ -32,6 +33,11 @@ sprite_frames = SubResource("SpriteFrames_10ve3")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(2.75, 2.1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mmcws")
+volume_db = 5.0
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

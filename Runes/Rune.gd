@@ -5,8 +5,11 @@ const SPEED = 100
 
 var playerIn = false
 
+func set_position_x_spawn(limitX):
+	position = Vector2(randf_range(limitX.x,limitX.y), -30)
+	
 func _ready():
-	$CollisionShape2D/AnimatedSprite2D.frame = randi_range(0,35)
+	$CollisionShape2D/AnimatedSprite2D.frame = randi_range(0,34)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if $TextureProgressBar.value <= 0:
@@ -26,11 +29,13 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		playerIn = true
+		$AudioStreamPlayer.play()
 
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		playerIn = false
+		$AudioStreamPlayer.stop()
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
