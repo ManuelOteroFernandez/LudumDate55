@@ -3,6 +3,7 @@ extends Node
 @export var sceneToSpawnList:Array[PackedScene]
 @export var limitX:Vector2 = Vector2(20,1000)
 @export var sceneToSpawnListLvl2:Array[PackedScene]
+@export var stopSpawnWhenPlayerIsTrapped:bool = true
 
 func _ready():
 	Global.connect("on_collect_rune",_on_collect_rune)
@@ -20,11 +21,11 @@ func _on_collect_rune():
 		Global.disconnect("on_collect_rune",_on_collect_rune)
 
 func _on_player_trapped():
-	if has_node("Timer"):
+	if stopSpawnWhenPlayerIsTrapped and has_node("Timer"):
 		$Timer.call_deferred("stop")
 
 func _on_player_liberate():
-	if has_node("Timer"):
+	if stopSpawnWhenPlayerIsTrapped and has_node("Timer"):
 		$Timer.call_deferred("start")
 
 func _on_timer_timeout():
