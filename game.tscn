@@ -19,8 +19,9 @@ texture_repeat = 2
 
 [node name="Generacion" type="Node" parent="."]
 script = ExtResource("2_wifv0")
-sceneToSpawnList = Array[PackedScene]([ExtResource("3_1dqjm"), ExtResource("4_2e0eq")])
+sceneToSpawnList = Array[PackedScene]([ExtResource("3_1dqjm")])
 limitX = Vector2(230, 925)
+sceneToSpawnListLvl2 = Array[PackedScene]([ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("4_2e0eq"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm")])
 
 [node name="Timer" type="Timer" parent="Generacion"]
 autostart = true

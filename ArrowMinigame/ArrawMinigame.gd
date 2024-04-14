@@ -17,6 +17,14 @@ func activate():
 	$ColorRect2.visible = true
 	_is_active = true
 	
+func deactivate():
+	player.liberate()
+	numWins = 0
+	numGenerated = 0
+	$ColorRect2.visible = false
+	$ValidationZone.visible = false
+	_is_active = false
+	
 func _ready():
 	$ValidationZone.new_position()
 	var nodes = get_tree().get_nodes_in_group("player")
@@ -45,20 +53,15 @@ func _on_player_arrow_just_pressed(value:int):
 	if win:
 		numWins += 1
 		if(numWins >= numToGenerate):
-			player.liberate()
-			numWins = 0
-			numGenerated = 0
-			$ColorRect2.visible = false
-			$ValidationZone.visible = false
-			_is_active = false
+			player.receive_health()
+			deactivate()
 	else:
 		$Timer.stop()
-		numWins = 0
-		numGenerated = 0
-		player.receive_damage(Vector2(0,0))
 		for node in nodes:
 			node.queue_free()
-		$Timer.start()
+			
+		player.receive_damage(Vector2(0,0))
+		deactivate()
 
 func _on_player_trapped():
 	activate()

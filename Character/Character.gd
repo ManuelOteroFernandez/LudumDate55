@@ -13,7 +13,6 @@ const SPEED = 12000.0
 var unmove = false
 
 func liberate():
-	receive_health()
 	unmove = false
 	on_liberate.emit()
 	$Trapper.visible = false
