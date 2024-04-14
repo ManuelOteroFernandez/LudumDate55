@@ -13,6 +13,7 @@ const SPEED = 12000.0
 var unmove = false
 
 func liberate():
+	$SlimeSFX.stop()
 	unmove = false
 	on_liberate.emit()
 	$Trapper.visible = false
@@ -84,3 +85,4 @@ func trapped(trapper:Texture2D):
 	$Trapper.visible = true
 	unmove = true
 	on_trapped.emit()
+	$SlimeSFX.play()
