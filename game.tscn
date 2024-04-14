@@ -1,19 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://dews54neo83t6"]
+[gd_scene load_steps=13 format=3 uid="uid://dews54neo83t6"]
 
 [ext_resource type="PackedScene" uid="uid://dy674427vjppa" path="res://Enviroment/background.tscn" id="1_aa7fl"]
 [ext_resource type="Script" path="res://Generacion.gd" id="2_wifv0"]
 [ext_resource type="PackedScene" uid="uid://htn6dm7acnmi" path="res://Enemies/Enemy.tscn" id="3_1dqjm"]
-[ext_resource type="PackedScene" uid="uid://ddsx5qelrxq2b" path="res://Enemies/TrapperEnemy.tscn" id="4_2e0eq"]
-[ext_resource type="PackedScene" uid="uid://bd8lfbcypsas1" path="res://Runes/Rune.tscn" id="4_esok7"]
+[ext_resource type="PackedScene" path="res://Music/Runes/Rune.tscn" id="4_esok7"]
 [ext_resource type="PackedScene" uid="uid://dixt0qf3tubai" path="res://Character/Character.tscn" id="5_535aq"]
-[ext_resource type="PackedScene" uid="uid://cw3qysqifwjxy" path="res://Enemies/BigEnemy.tscn" id="5_daap6"]
-[ext_resource type="PackedScene" uid="uid://dks42so6tkkp4" path="res://UI/Controls/MoveTouchButtons.tscn" id="6_rpto6"]
+[ext_resource type="PackedScene" path="res://UI/Controls/MoveTouchButtons.tscn" id="6_rpto6"]
+[ext_resource type="Script" path="res://ArrowMinigame/ActivatorArrorMiniGame.gd" id="7_xfj2p"]
 [ext_resource type="PackedScene" uid="uid://clqcbp23cleeg" path="res://ArrowMinigame/ArrawMinigame.tscn" id="8_netnm"]
 [ext_resource type="PackedScene" uid="uid://deqmvmu6gg0my" path="res://UI/life/Life.tscn" id="9_x82kn"]
-[ext_resource type="Texture2D" uid="uid://c137tyuadniin" path="res://Runes/RuneGroup.png" id="10_t0uus"]
-[ext_resource type="Script" path="res://UI/NumRunes.gd" id="12_ced3a"]
-[ext_resource type="AudioStream" uid="uid://b5ortpwqpxjhc" path="res://Sounds/powerUp2.ogg" id="13_fnrrp"]
-[ext_resource type="AudioStream" uid="uid://bg6nihipqj2ex" path="res://Music/Phantasmal Platforms.mp3" id="13_k1g3t"]
+[ext_resource type="Script" path="res://NumRunes.gd" id="10_50w7m"]
+[ext_resource type="Texture2D" path="res://Music/Runes/RuneGroup.png" id="10_t0uus"]
+[ext_resource type="AudioStream" uid="uid://kfpu8fipatly" path="res://Music/Spectral Stairs.mp3" id="12_v5tiw"]
 
 [node name="Node2D" type="Node2D"]
 texture_repeat = 2
@@ -23,8 +21,6 @@ texture_repeat = 2
 [node name="Generacion" type="Node" parent="."]
 script = ExtResource("2_wifv0")
 sceneToSpawnList = Array[PackedScene]([ExtResource("3_1dqjm")])
-lvl2SceneToSpawnList = Array[PackedScene]([ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("4_2e0eq")])
-lvl3SceneToSpawnList = Array[PackedScene]([ExtResource("5_daap6"), ExtResource("5_daap6"), ExtResource("5_daap6"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("3_1dqjm"), ExtResource("4_2e0eq")])
 limitX = Vector2(230, 925)
 
 [node name="Timer" type="Timer" parent="Generacion"]
@@ -34,9 +30,9 @@ autostart = true
 script = ExtResource("2_wifv0")
 sceneToSpawnList = Array[PackedScene]([ExtResource("4_esok7")])
 limitX = Vector2(230, 925)
-stopSpawnWhenPlayerIsTrapped = false
 
 [node name="Timer" type="Timer" parent="RuneGenerator"]
+wait_time = 35.0
 autostart = true
 
 [node name="Character" parent="." instance=ExtResource("5_535aq")]
@@ -61,7 +57,7 @@ offset_left = 953.0
 offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.521569, 0.521569, 0.521569, 1)
+color = Color(0.172549, 0.172549, 0.172549, 1)
 
 [node name="MoveTouchButtons" parent="CanvasLayer" instance=ExtResource("6_rpto6")]
 
@@ -92,14 +88,10 @@ theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
 text = "0/6"
 fit_content = true
-script = ExtResource("12_ced3a")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/NumRunes"]
-stream = ExtResource("13_fnrrp")
+script = ExtResource("10_50w7m")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_k1g3t")
-volume_db = -8.0
+stream = ExtResource("12_v5tiw")
 autoplay = true
 
 [connection signal="timeout" from="Generacion/Timer" to="Generacion" method="_on_timer_timeout"]
