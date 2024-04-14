@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dks42so6tkkp4" path="res://UI/Controls/MoveTouchButtons.tscn" id="6_rpto6"]
 [ext_resource type="PackedScene" uid="uid://clqcbp23cleeg" path="res://ArrowMinigame/ArrawMinigame.tscn" id="8_netnm"]
 [ext_resource type="PackedScene" uid="uid://deqmvmu6gg0my" path="res://UI/life/Life.tscn" id="9_x82kn"]
-[ext_resource type="Script" path="res://NumRunes.gd" id="10_50w7m"]
 [ext_resource type="Texture2D" uid="uid://c137tyuadniin" path="res://Runes/RuneGroup.png" id="10_t0uus"]
+[ext_resource type="Script" path="res://UI/NumRunes.gd" id="12_ced3a"]
 
 [node name="Node2D" type="Node2D"]
 texture_repeat = 2
@@ -88,7 +88,7 @@ theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
 text = "0/6"
 fit_content = true
-script = ExtResource("10_50w7m")
+script = ExtResource("12_ced3a")
 
 [connection signal="timeout" from="Generacion/Timer" to="Generacion" method="_on_timer_timeout"]
 [connection signal="timeout" from="RuneGenerator/Timer" to="RuneGenerator" method="_on_timer_timeout"]
