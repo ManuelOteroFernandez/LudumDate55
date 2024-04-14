@@ -3,6 +3,9 @@ extends CharacterBody2D
 const SPEED = 10000.0
 var canHit = true
 
+func _ready():
+	$AnimatedSprite2D.frame = randi_range(0,2)
+
 func _physics_process(delta):
 	velocity.y = SPEED * delta
 	move_and_slide()
