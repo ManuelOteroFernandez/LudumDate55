@@ -28,7 +28,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"swim",
-"speed": 5.0
+"speed": 0.5
 }]
 
 [node name="Character" type="CharacterBody2D" groups=["player"]]
@@ -42,6 +42,8 @@ shape = SubResource("CapsuleShape2D_criwa")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 sprite_frames = SubResource("SpriteFrames_n35rb")
 animation = &"swim"
+autoplay = "swim"
+frame_progress = 0.998074
 
 [node name="HitTimer" type="Timer" parent="."]
 wait_time = 0.3
