@@ -1,6 +1,9 @@
 extends Control
 
 @export var numToGenerate = 5
+@onready var soundWin = load("res://Sounds/powerUp7.ogg")
+@onready var soundLose = load("res://Sounds/phaserDown1.ogg")
+
 var numGenerated = 0
 var numWins = 0
 var player
@@ -52,6 +55,8 @@ func on_arrow_screen_exited():
 		for node in nodes:
 			node.visible = false
 			
+		$AudioStreamPlayer.stream = soundLose
+		$AudioStreamPlayer.play()
 		player.receive_damage(Vector2(0,0))
 
 func _on_player_arrow_just_pressed(value:int):
@@ -67,6 +72,8 @@ func _on_player_arrow_just_pressed(value:int):
 	if win:
 		numWins += 1
 		if(numWins >= numToGenerate):
+			$AudioStreamPlayer.stream = soundWin
+			$AudioStreamPlayer.play()
 			player.receive_health()
 			deactivate()
 	else:
@@ -75,6 +82,8 @@ func _on_player_arrow_just_pressed(value:int):
 			node.queue_free()
 			
 		player.receive_damage(Vector2(0,0))
+		$AudioStreamPlayer.stream = soundLose
+		$AudioStreamPlayer.play()
 		deactivate()
 
 func _on_player_trapped():
