@@ -19,11 +19,11 @@ func activate():
 	
 func deactivate():
 	player.liberate()
+	_is_active = false
 	numWins = 0
 	numGenerated = 0
 	$ColorRect2.visible = false
 	$ValidationZone.visible = false
-	_is_active = false
 	
 func _ready():
 	$ValidationZone.new_position()
@@ -36,22 +36,22 @@ func _ready():
 			player.connect("on_trapped", _on_player_trapped)
 
 func on_spawn():
-	numGenerated+=1
 	if numToGenerate <= numGenerated:
 		$Timer.stop()
 	else:
 		var node = $Timer.spawn()
 		if node and node.is_in_group("arrow"):
-			node.connect("tree_exiting",_on_arrow_tree_exiting)
+			node.connect("on_screen_exited",on_arrow_screen_exited)
+	numGenerated+=1
 
-func _on_arrow_tree_exiting():
+func on_arrow_screen_exited():
 	if _is_active:
+		deactivate()
 		$Timer.stop()
 		var nodes = get_tree().get_nodes_in_group("arrow")
 		for node in nodes:
 			node.visible = false
 			
-		deactivate()
 		player.receive_damage(Vector2(0,0))
 
 func _on_player_arrow_just_pressed(value:int):
