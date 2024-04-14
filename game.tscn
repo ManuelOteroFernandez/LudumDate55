@@ -41,6 +41,13 @@ limits = Vector4(220, 0, 936, 610)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="ActivatorArrorMiniGame" type="Timer" parent="CanvasLayer"]
+wait_time = 55.0
+autostart = true
+script = ExtResource("7_xfj2p")
+
+[node name="ArrowMiniGame" parent="CanvasLayer/ActivatorArrorMiniGame" instance=ExtResource("8_netnm")]
+
 [node name="ColorRect3" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,13 +59,6 @@ grow_vertical = 2
 color = Color(0.172549, 0.172549, 0.172549, 1)
 
 [node name="MoveTouchButtons" parent="CanvasLayer" instance=ExtResource("6_rpto6")]
-
-[node name="ActivatorArrorMiniGame" type="Timer" parent="CanvasLayer"]
-wait_time = 55.0
-autostart = true
-script = ExtResource("7_xfj2p")
-
-[node name="ArrowMiniGame" parent="CanvasLayer/ActivatorArrorMiniGame" instance=ExtResource("8_netnm")]
 
 [node name="Life" parent="CanvasLayer" instance=ExtResource("9_x82kn")]
 z_index = 10
