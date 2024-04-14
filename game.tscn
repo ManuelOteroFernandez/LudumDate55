@@ -93,7 +93,7 @@ script = ExtResource("12_ced3a")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_k1g3t")
-volume_db = -5.0
+volume_db = -8.0
 autoplay = true
 
 [connection signal="timeout" from="Generacion/Timer" to="Generacion" method="_on_timer_timeout"]
