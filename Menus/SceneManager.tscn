@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Menus/SceneManager.gd" id="1_n1fy5"]
 [ext_resource type="PackedScene" uid="uid://cxmbnt1e7j5dx" path="res://Menus/TransitionScreen.tscn" id="2_2as76"]
 
-[node name="SceneManager" type="Node"]
+[node name="SceneManager" type="Node2D"]
 script = ExtResource("1_n1fy5")
 
 [node name="CurrentScene" type="Node" parent="."]
@@ -12,7 +12,11 @@ script = ExtResource("1_n1fy5")
 [node name="Main" parent="CurrentScene" instance=ExtResource("1_2ygww")]
 
 [node name="TransitionScreen" parent="." instance=ExtResource("2_2as76")]
-visible = false
+
+[node name="ColorRect" parent="TransitionScreen" index="0"]
+mouse_filter = 2
 
 [connection signal="exit_menu" from="CurrentScene/Main" to="." method="_on_main_exit_menu"]
 [connection signal="transitioned" from="TransitionScreen" to="." method="_on_transition_screen_transitioned"]
+
+[editable path="TransitionScreen"]
