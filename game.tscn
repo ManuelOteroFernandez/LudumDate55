@@ -39,6 +39,7 @@ limitX = Vector2(230, 925)
 stopSpawnWhenPlayerIsTrapped = false
 
 [node name="Timer" type="Timer" parent="RuneGenerator"]
+wait_time = 20.0
 autostart = true
 
 [node name="Character" parent="." instance=ExtResource("5_535aq")]
