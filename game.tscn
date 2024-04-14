@@ -32,7 +32,7 @@ sceneToSpawnList = Array[PackedScene]([ExtResource("4_esok7")])
 limitX = Vector2(230, 925)
 
 [node name="Timer" type="Timer" parent="RuneGenerator"]
-wait_time = 35.0
+wait_time = 20.0
 autostart = true
 
 [node name="Character" parent="." instance=ExtResource("5_535aq")]
