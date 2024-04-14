@@ -46,4 +46,7 @@ animation = &"swim"
 [node name="HitTimer" type="Timer" parent="."]
 wait_time = 0.3
 
+[node name="Trapper" type="Sprite2D" parent="."]
+visible = false
+
 [connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]

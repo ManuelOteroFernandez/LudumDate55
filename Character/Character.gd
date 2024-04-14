@@ -2,6 +2,8 @@ class_name Character extends CharacterBody2D
 
 signal on_receive_damage(newValue:int)
 signal on_arrow_move(direction:int)
+signal on_trapped
+signal on_liberate
 
 @export var limits = Vector4(0,0,1100,600)
 @export var lifes = 4
@@ -10,6 +12,11 @@ const SPEED = 12000.0
 
 var unmove = false
 
+func liberate():
+	unmove = false
+	on_liberate.emit()
+	$Trapper.visible = false
+	
 func receive_health():
 	lifes = 4
 	on_receive_damage.emit(lifes)
@@ -66,3 +73,9 @@ func _physics_process(delta):
 
 func _on_hit_timer_timeout():
 	$HitTimer.stop()
+	
+func trapped(trapper:Texture2D):
+	$Trapper.texture = trapper
+	$Trapper.visible = true
+	unmove = true
+	on_trapped.emit()

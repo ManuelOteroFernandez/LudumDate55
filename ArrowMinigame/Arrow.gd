@@ -1,5 +1,7 @@
 extends TextureRect
 
+signal on_screen_exited
+
 const SPEED = 250.0
 
 var typeList = {
