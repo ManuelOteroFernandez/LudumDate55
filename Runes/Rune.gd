@@ -6,7 +6,7 @@ const SPEED = 100
 var playerIn = false
 
 func _ready():
-	$CollisionShape2D/AnimatedSprite2D.frame = randi_range(0,35)
+	$CollisionShape2D/AnimatedSprite2D.frame = randi_range(0,34)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if $TextureProgressBar.value <= 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bd8lfbcypsas1"]
+[gd_scene load_steps=41 format=3 uid="uid://bd8lfbcypsas1"]
 
 [ext_resource type="Texture2D" uid="uid://bfjtse32d73l0" path="res://Runes/runeBlue_slabOutline_sheet.png" id="1_85igk"]
 [ext_resource type="Script" path="res://Runes/Rune.gd" id="1_ul0s0"]
@@ -6,10 +6,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdrwu"]
 size = Vector2(29.5, 52)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0gn5r"]
-atlas = ExtResource("1_85igk")
-region = Rect2(0, 93, 56, 93)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wgab7"]
 atlas = ExtResource("1_85igk")
@@ -155,9 +151,6 @@ region = Rect2(336, 372, 56, 93)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0gn5r")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_wgab7")
 }, {
 "duration": 1.0,
@@ -274,11 +267,13 @@ script = ExtResource("1_ul0s0")
 shape = SubResource("RectangleShape2D_xdrwu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+z_index = 20
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_2ohv7")
 frame = 12
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+z_index = 25
 offset_left = -47.0
 offset_top = -47.0
 offset_right = 47.0
