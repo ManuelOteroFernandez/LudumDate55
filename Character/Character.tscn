@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dixt0qf3tubai"]
+[gd_scene load_steps=9 format=3 uid="uid://dixt0qf3tubai"]
 
 [ext_resource type="Texture2D" uid="uid://ci4w7iptacjek" path="res://Character/alienBlue_hurt.png" id="1_0wl0f"]
 [ext_resource type="Script" path="res://Character/Character.gd" id="1_uee8d"]
 [ext_resource type="Texture2D" uid="uid://cgxsweh2kpjqh" path="res://Character/alienBlue_swim1.png" id="2_guaf8"]
 [ext_resource type="Texture2D" uid="uid://v04tmu2ql43q" path="res://Character/alienBlue_swim2.png" id="3_lqmh0"]
 [ext_resource type="AudioStream" uid="uid://bv5ws6s0wg2g2" path="res://Sounds/slime_001.ogg" id="5_5ibh0"]
+[ext_resource type="AudioStream" uid="uid://dkj4oudywdedb" path="res://Sounds/hit/horror_01_stinger_violin_glitch_01.wav" id="6_t7fen"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_criwa"]
 radius = 29.0
@@ -52,5 +53,9 @@ wait_time = 0.3
 [node name="SlimeSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_5ibh0")
 volume_db = -8.0
+
+[node name="HitSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_t7fen")
+volume_db = 5.0
 
 [connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]

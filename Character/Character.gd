@@ -23,7 +23,7 @@ func receive_health():
 	on_receive_damage.emit(lifes)
 
 func receive_damage(repulsionVelocity:Vector2):
-	
+	$HitSFX.play()
 	$CollisionShape2D/AnimatedSprite2D.play("hurt")
 	velocity = repulsionVelocity
 	$HitTimer.start()
