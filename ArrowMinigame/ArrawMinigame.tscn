@@ -58,17 +58,5 @@ color = Color(0.403922, 0.776471, 0.356863, 1)
 script = ExtResource("4_vig55")
 limits = Vector2(300, 581)
 
-[node name="ColorRect3" type="ColorRect" parent="."]
-z_index = 5
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -952.0
-offset_bottom = -498.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.607843, 0.607843, 0.607843, 1)
-
 [connection signal="timeout" from="Timer" to="." method="on_spawn"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cde5imcgpum8b"]
+[gd_scene load_steps=11 format=3 uid="uid://cde5imcgpum8b"]
 
 [ext_resource type="PackedScene" uid="uid://dy674427vjppa" path="res://Enviroment/background.tscn" id="1_aa7fl"]
 [ext_resource type="Script" path="res://Generacion.gd" id="2_wifv0"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://clqcbp23cleeg" path="res://ArrowMinigame/ArrawMinigame.tscn" id="8_netnm"]
 [ext_resource type="PackedScene" uid="uid://deqmvmu6gg0my" path="res://UI/life/Life.tscn" id="9_x82kn"]
 [ext_resource type="Script" path="res://NumRunes.gd" id="10_50w7m"]
-[ext_resource type="Texture2D" uid="uid://c137tyuadniin" path="res://Runes/RuneGroup.png" id="10_t0uus"]
 
 [node name="Node2D" type="Node2D"]
 texture_repeat = 2
@@ -66,10 +65,6 @@ offset_left = 989.0
 offset_top = 17.0
 offset_right = -31.0
 offset_bottom = -485.0
-
-[node name="RuneGroup" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1048, 261)
-texture = ExtResource("10_t0uus")
 
 [node name="NumRunes" type="RichTextLabel" parent="CanvasLayer"]
 anchors_preset = 6
