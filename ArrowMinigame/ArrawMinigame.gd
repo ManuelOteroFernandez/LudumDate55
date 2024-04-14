@@ -5,6 +5,7 @@ var numGenerated = 0
 var numWins = 0
 var player
 var _is_active = false
+
 func is_active():
 	return _is_active
 
@@ -23,6 +24,8 @@ func _ready():
 		player = nodes[0]
 		if player.has_signal("on_arrow_move"):
 			player.connect("on_arrow_move",_on_player_arrow_just_pressed)
+		if player.has_signal("on_trapped"):
+			player.connect("on_trapped", _on_player_trapped)
 
 func on_spawn():
 	numGenerated+=1
@@ -42,8 +45,7 @@ func _on_player_arrow_just_pressed(value:int):
 	if win:
 		numWins += 1
 		if(numWins >= numToGenerate):
-			player.receive_health()
-			player.unmove = false
+			player.liberate()
 			numWins = 0
 			numGenerated = 0
 			$ColorRect2.visible = false
@@ -57,3 +59,6 @@ func _on_player_arrow_just_pressed(value:int):
 		for node in nodes:
 			node.queue_free()
 		$Timer.start()
+
+func _on_player_trapped():
+	activate()
