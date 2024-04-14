@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dews54neo83t6"]
+[gd_scene load_steps=15 format=3 uid="uid://dews54neo83t6"]
 
 [ext_resource type="PackedScene" uid="uid://dy674427vjppa" path="res://Enviroment/background.tscn" id="1_aa7fl"]
 [ext_resource type="Script" path="res://Generacion.gd" id="2_wifv0"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://deqmvmu6gg0my" path="res://UI/life/Life.tscn" id="9_x82kn"]
 [ext_resource type="Texture2D" uid="uid://c137tyuadniin" path="res://Runes/RuneGroup.png" id="10_t0uus"]
 [ext_resource type="Script" path="res://UI/NumRunes.gd" id="12_ced3a"]
+[ext_resource type="AudioStream" uid="uid://b5ortpwqpxjhc" path="res://Sounds/powerUp2.ogg" id="13_fnrrp"]
 [ext_resource type="AudioStream" uid="uid://bg6nihipqj2ex" path="res://Music/Phantasmal Platforms.mp3" id="13_k1g3t"]
 
 [node name="Node2D" type="Node2D"]
@@ -38,7 +39,6 @@ limitX = Vector2(230, 925)
 stopSpawnWhenPlayerIsTrapped = false
 
 [node name="Timer" type="Timer" parent="RuneGenerator"]
-wait_time = 20.0
 autostart = true
 
 [node name="Character" parent="." instance=ExtResource("5_535aq")]
@@ -90,6 +90,9 @@ theme_override_font_sizes/bold_font_size = 40
 text = "0/6"
 fit_content = true
 script = ExtResource("12_ced3a")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/NumRunes"]
+stream = ExtResource("13_fnrrp")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_k1g3t")

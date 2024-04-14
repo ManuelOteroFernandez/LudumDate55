@@ -1,8 +1,9 @@
-[gd_scene load_steps=41 format=3 uid="uid://bd8lfbcypsas1"]
+[gd_scene load_steps=42 format=3 uid="uid://bd8lfbcypsas1"]
 
 [ext_resource type="Texture2D" uid="uid://bfjtse32d73l0" path="res://Runes/runeBlue_slabOutline_sheet.png" id="1_85igk"]
 [ext_resource type="Script" path="res://Runes/Rune.gd" id="1_ul0s0"]
 [ext_resource type="Texture2D" uid="uid://sjef1jhr7yyt" path="res://Runes/circleCollect.png" id="3_5v6px"]
+[ext_resource type="AudioStream" uid="uid://ix75odxubctp" path="res://Sounds/Retro Electric 02.wav" id="4_ulmdi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdrwu"]
 size = Vector2(29.5, 52)
@@ -285,6 +286,10 @@ texture_progress = ExtResource("3_5v6px")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-0.5, -1.90735e-06)
 scale = Vector2(1.55, 2.6)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ulmdi")
+volume_db = -25.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
