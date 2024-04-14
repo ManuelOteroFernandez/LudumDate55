@@ -45,6 +45,7 @@ sceneToSpawnList = Array[PackedScene]([ExtResource("2_o2kht")])
 limitX = Vector2(50, 100)
 
 [node name="ValidationZone" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

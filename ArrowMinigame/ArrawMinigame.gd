@@ -12,6 +12,7 @@ func activate():
 	$Timer.start()
 	player.unmove = true
 	$ValidationZone.new_position()
+	$ValidationZone.visible = true
 	$ColorRect2.visible = true
 	_is_active = true
 	
@@ -46,6 +47,7 @@ func _on_player_arrow_just_pressed(value:int):
 			numWins = 0
 			numGenerated = 0
 			$ColorRect2.visible = false
+			$ValidationZone.visible = false
 			_is_active = false
 	else:
 		$Timer.stop()
