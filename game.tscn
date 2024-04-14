@@ -16,6 +16,8 @@
 texture_repeat = 2
 
 [node name="Background" parent="." instance=ExtResource("1_aa7fl")]
+offset = Vector2(0, -576)
+initialOffser = -1187
 
 [node name="Generacion" type="Node" parent="."]
 script = ExtResource("2_wifv0")
