@@ -28,6 +28,9 @@ func _on_player_liberate():
 		$Timer.call_deferred("start")
 
 func _on_timer_timeout():
+	spawn()
+	
+func spawn():
 	if (not sceneToSpawnList.is_empty()):
 		var sceneToSpawn = sceneToSpawnList.pick_random()
 		var nodeToSpawn = sceneToSpawn.instantiate()
@@ -36,3 +39,5 @@ func _on_timer_timeout():
 		else:
 			nodeToSpawn.position = Vector2(randf_range(limitX.x,limitX.y), -30)
 		add_child(nodeToSpawn)
+		
+		return nodeToSpawn

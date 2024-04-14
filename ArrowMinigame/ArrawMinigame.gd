@@ -39,6 +39,20 @@ func on_spawn():
 	numGenerated+=1
 	if numToGenerate <= numGenerated:
 		$Timer.stop()
+	else:
+		var node = $Timer.spawn()
+		if node and node.is_in_group("arrow"):
+			node.connect("tree_exiting",_on_arrow_tree_exiting)
+
+func _on_arrow_tree_exiting():
+	if _is_active:
+		$Timer.stop()
+		var nodes = get_tree().get_nodes_in_group("arrow")
+		for node in nodes:
+			node.visible = false
+			
+		deactivate()
+		player.receive_damage(Vector2(0,0))
 
 func _on_player_arrow_just_pressed(value:int):
 	var validZone:Vector2 = $ValidationZone.get_valid_postion()
