@@ -2,7 +2,7 @@ extends Control
 
 @export var numToGenerate = 5
 @onready var soundWin = load("res://Sounds/powerUp7.ogg")
-@onready var soundLose = load("res://Sounds/phaserDown1.ogg")
+@onready var soundLose = load("res://Sounds/Retro Event Wrong Simple 03.wav")
 
 var numGenerated = 0
 var numWins = 0
