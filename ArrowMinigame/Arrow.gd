@@ -12,6 +12,9 @@ var typeList = {
 }
 var type:int = Global.DIRECTIONS.UP 
 
+func set_position_x_spawn(limitX):
+	position = Vector2(randf_range(limitX.x,limitX.y), -30)
+	
 func get_type():
 	return type
 	
