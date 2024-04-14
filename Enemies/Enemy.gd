@@ -13,8 +13,8 @@ func _physics_process(delta):
 		if canHit and collider.has_method("receive_damage"):
 			collider.receive_damage(collision.get_normal() * SPEED * 2 * delta * -1)
 			canHit = false
-			
-		move_and_slide()
+		else:
+			move_and_slide()
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()

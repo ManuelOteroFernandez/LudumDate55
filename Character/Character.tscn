@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dixt0qf3tubai"]
+[gd_scene load_steps=7 format=3 uid="uid://dsi46fcd837s2"]
 
 [ext_resource type="Texture2D" uid="uid://ci4w7iptacjek" path="res://Character/alienBlue_hurt.png" id="1_0wl0f"]
 [ext_resource type="Script" path="res://Character/Character.gd" id="1_uee8d"]

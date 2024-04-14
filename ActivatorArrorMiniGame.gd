@@ -2,4 +2,5 @@ extends Timer
 
 
 func _on_timeout():
-	$ArrowMiniGame.activate()
+	if not $ArrowMiniGame.is_active():
+		$ArrowMiniGame.activate()

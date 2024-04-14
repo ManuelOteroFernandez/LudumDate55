@@ -1,14 +1,14 @@
 extends TextureRect
 
-const SPEED = 300.0
+const SPEED = 250.0
 
 var typeList = {
-	GLOBAL.DIRECTIONS.UP:load('res://ArrowMinigame/steamdeck_dpad_up.png'),
-	GLOBAL.DIRECTIONS.DOWN:load('res://ArrowMinigame/steamdeck_dpad_down.png'),
-	GLOBAL.DIRECTIONS.LEFT:load('res://ArrowMinigame/steamdeck_dpad_left.png'),
-	GLOBAL.DIRECTIONS.RIGHT:load('res://ArrowMinigame/steamdeck_dpad_right.png'),
+	Global.DIRECTIONS.UP:load('res://ArrowMinigame/steamdeck_dpad_up.png'),
+	Global.DIRECTIONS.DOWN:load('res://ArrowMinigame/steamdeck_dpad_down.png'),
+	Global.DIRECTIONS.LEFT:load('res://ArrowMinigame/steamdeck_dpad_left.png'),
+	Global.DIRECTIONS.RIGHT:load('res://ArrowMinigame/steamdeck_dpad_right.png'),
 }
-var type:int = GLOBAL.DIRECTIONS.UP 
+var type:int = Global.DIRECTIONS.UP 
 
 func get_type():
 	return type
