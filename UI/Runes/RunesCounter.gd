@@ -38,3 +38,20 @@ func _on_animated_sprite_2d_animation_finished():
 		$AnimatedSprite2D.play("inv6Idle")
 	if $AnimatedSprite2D.animation == "inv6Idle":
 		get_tree().current_scene.go_to_win_screen()
+
+
+func _on_animated_sprite_2d_sprite_frames_changed():
+	print($AnimatedSprite2D.animation)
+	print( $AnimatedSprite2D.frame )
+	if $AnimatedSprite2D.animation == "inv1" and $AnimatedSprite2D.frame == 14:
+		$AudioStreamPlayer.play()
+	elif $AnimatedSprite2D.animation == "inv2" and $AnimatedSprite2D.frame == 14:
+		$AudioStreamPlayer.play()
+	elif $AnimatedSprite2D.animation == "inv3" and $AnimatedSprite2D.frame == 15:
+		$AudioStreamPlayer.play()
+	elif $AnimatedSprite2D.animation == "inv4" and $AnimatedSprite2D.frame == 16:
+		$AudioStreamPlayer.play()
+	elif $AnimatedSprite2D.animation == "inv5" and $AnimatedSprite2D.frame == 16:
+		$AudioStreamPlayer.play()
+	elif $AnimatedSprite2D.animation == "inv6" and $AnimatedSprite2D.frame == 14:
+		$AudioStreamPlayer.play()

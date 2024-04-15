@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ytp1vn6l45km"]
+[gd_scene load_steps=4 format=3 uid="uid://ytp1vn6l45km"]
 
 [ext_resource type="Script" path="res://UI/Runes/RunesCounter.gd" id="1_e4fci"]
 [ext_resource type="SpriteFrames" uid="uid://bj1rcumtx80an" path="res://UI/Runes/RunesCounter.tres" id="2_brnjf"]
+[ext_resource type="AudioStream" uid="uid://cui6spv0olwxt" path="res://Sounds/Retro_Explosion_Long_02.wav" id="3_xi177"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,6 +12,12 @@ script = ExtResource("1_e4fci")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("2_brnjf")
-animation = &"inv6Idle"
+animation = &"inv1"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xi177")
+volume_db = -20.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_sprite_frames_changed"]
+[connection signal="sprite_frames_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_sprite_frames_changed"]

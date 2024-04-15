@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkn1b8f3yv857"]
+[gd_scene load_steps=6 format=3 uid="uid://dkn1b8f3yv857"]
 
 [ext_resource type="Script" path="res://win_screen.gd" id="1_1gb81"]
-[ext_resource type="Texture2D" uid="uid://bn232vq7slfw" path="res://Menus/start-normal.png" id="1_xtqbs"]
-[ext_resource type="Texture2D" uid="uid://c6782jn5m7h4y" path="res://Menus/start-hover.png" id="2_qc5hy"]
+[ext_resource type="Texture2D" uid="uid://bplaqksma7f0x" path="res://UI/text/exit.png" id="2_sapfh"]
+[ext_resource type="Texture2D" uid="uid://dqrlwpvfkuc1" path="res://UI/text/exitHover.png" id="3_ewqfx"]
 [ext_resource type="SpriteFrames" uid="uid://bj1rcumtx80an" path="res://UI/Runes/RunesCounter.tres" id="4_rnk51"]
+[ext_resource type="Texture2D" uid="uid://d3obb5nklmmd" path="res://UI/text/invach.png" id="5_gpe7a"]
 
 [node name="WinScreen" type="CanvasLayer"]
 script = ExtResource("1_1gb81")
@@ -16,35 +17,20 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.180392, 0.180392, 0.180392, 1)
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -272.0
-offset_right = 60.0
-offset_bottom = -188.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 60
-text = "Win"
-
 [node name="TextureButton" type="TextureButton" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -78.0
+offset_left = -47.0
 offset_top = -112.0
-offset_right = 70.0
+offset_right = 101.0
 offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("1_xtqbs")
-texture_hover = ExtResource("2_qc5hy")
+texture_normal = ExtResource("2_sapfh")
+texture_hover = ExtResource("3_ewqfx")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="TextureButton"]
 modulate = Color(1, 1, 1, 0)
@@ -58,6 +44,10 @@ scale = Vector2(2, 2)
 sprite_frames = ExtResource("4_rnk51")
 animation = &"inv6Idle"
 frame_progress = 0.405091
+
+[node name="Invach" type="Sprite2D" parent="."]
+position = Vector2(568, 76)
+texture = ExtResource("5_gpe7a")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_back_to_menu"]
 [connection signal="pressed" from="TextureButton/TouchScreenButton" to="." method="_on_back_to_menu"]

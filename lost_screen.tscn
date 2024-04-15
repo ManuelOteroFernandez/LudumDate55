@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcd4qv3ae8niu"]
 
 [ext_resource type="Script" path="res://win_screen.gd" id="1_fninr"]
-[ext_resource type="Texture2D" uid="uid://bn232vq7slfw" path="res://Menus/start-normal.png" id="2_njpek"]
-[ext_resource type="Texture2D" uid="uid://c6782jn5m7h4y" path="res://Menus/start-hover.png" id="3_bf30y"]
+[ext_resource type="Texture2D" uid="uid://bplaqksma7f0x" path="res://UI/text/exit.png" id="3_763o4"]
 [ext_resource type="SpriteFrames" uid="uid://bj1rcumtx80an" path="res://UI/Runes/RunesCounter.tres" id="4_aucrw"]
+[ext_resource type="Texture2D" uid="uid://dqrlwpvfkuc1" path="res://UI/text/exitHover.png" id="4_nv0qd"]
 
 [node name="LostScreen" type="CanvasLayer"]
 script = ExtResource("1_fninr")
@@ -49,8 +49,8 @@ offset_right = 74.0
 offset_bottom = -63.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("2_njpek")
-texture_hover = ExtResource("3_bf30y")
+texture_normal = ExtResource("3_763o4")
+texture_hover = ExtResource("4_nv0qd")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="TextureButton"]
 modulate = Color(1, 1, 1, 0)

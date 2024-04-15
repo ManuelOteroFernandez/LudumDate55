@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dg5r61xwo2xy0"]
+[gd_scene load_steps=10 format=3 uid="uid://dg5r61xwo2xy0"]
 
 [ext_resource type="Script" path="res://UI/pauseScreen.gd" id="1_22ylo"]
-[ext_resource type="Texture2D" uid="uid://bn232vq7slfw" path="res://Menus/start-normal.png" id="1_xrs3u"]
-[ext_resource type="Texture2D" uid="uid://c6782jn5m7h4y" path="res://Menus/start-hover.png" id="2_bnj2n"]
 [ext_resource type="Texture2D" uid="uid://v04tmu2ql43q" path="res://Character/alienBlue_swim2.png" id="3_62b2j"]
+[ext_resource type="Texture2D" uid="uid://b5yest5tm6ikk" path="res://UI/text/resume.png" id="3_ar4r4"]
 [ext_resource type="Texture2D" uid="uid://c10eh7q0efwck" path="res://Menus/particulilla.png" id="3_oybfs"]
+[ext_resource type="Texture2D" uid="uid://mwsf71j47t11" path="res://UI/text/resumeHover.png" id="4_1yhmi"]
 [ext_resource type="AudioStream" uid="uid://bygwkp83oqqaw" path="res://Sounds/UI_button05.wav" id="4_7mgxd"]
+[ext_resource type="Texture2D" uid="uid://bplaqksma7f0x" path="res://UI/text/exit.png" id="6_d4ajs"]
+[ext_resource type="Texture2D" uid="uid://dqrlwpvfkuc1" path="res://UI/text/exitHover.png" id="7_2gwjb"]
+[ext_resource type="Texture2D" uid="uid://cmhqui6dty2n0" path="res://UI/text/pause.png" id="8_2u6el"]
 
 [node name="PauseScreen" type="CanvasLayer"]
 process_mode = 3
@@ -21,19 +24,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.443137)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -97.0
-offset_top = 56.0
-offset_right = 101.0
-offset_bottom = 148.0
-grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 60
-theme_override_font_sizes/bold_font_size = 60
-text = "PAUSE"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 8
@@ -51,8 +41,8 @@ grow_vertical = 2
 [node name="btnResume" type="TextureButton" parent="VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-texture_normal = ExtResource("1_xrs3u")
-texture_hover = ExtResource("2_bnj2n")
+texture_normal = ExtResource("3_ar4r4")
+texture_hover = ExtResource("4_1yhmi")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="VBoxContainer/btnResume"]
 modulate = Color(1, 1, 1, 0)
@@ -61,25 +51,11 @@ scale = Vector2(0.828125, 0.6875)
 texture_normal = ExtResource("3_62b2j")
 visibility_mode = 1
 
-[node name="btnRestart" type="TextureButton" parent="VBoxContainer"]
-custom_minimum_size = Vector2(120, 32)
-layout_mode = 2
-texture_normal = ExtResource("1_xrs3u")
-texture_hover = ExtResource("2_bnj2n")
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="VBoxContainer/btnRestart"]
-visible = false
-modulate = Color(1, 1, 1, 0)
-position = Vector2(23, -1.14441e-05)
-scale = Vector2(14.8571, 8.14286)
-texture_normal = ExtResource("3_oybfs")
-visibility_mode = 1
-
 [node name="btnExit" type="TextureButton" parent="VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-texture_normal = ExtResource("1_xrs3u")
-texture_hover = ExtResource("2_bnj2n")
+texture_normal = ExtResource("6_d4ajs")
+texture_hover = ExtResource("7_2gwjb")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="VBoxContainer/btnExit"]
 visible = false
@@ -89,12 +65,13 @@ scale = Vector2(14.8571, 8.14286)
 texture_normal = ExtResource("3_oybfs")
 visibility_mode = 1
 
+[node name="Pause" type="Sprite2D" parent="."]
+position = Vector2(538, 82)
+texture = ExtResource("8_2u6el")
+
 [connection signal="mouse_entered" from="VBoxContainer/btnResume" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/btnResume" to="." method="_on_btn_resume_pressed"]
 [connection signal="pressed" from="VBoxContainer/btnResume/TouchScreenButton" to="." method="_on_btn_resume_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer/btnRestart" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/btnRestart" to="." method="_on_btn_restart_pressed"]
-[connection signal="pressed" from="VBoxContainer/btnRestart/TouchScreenButton" to="." method="_on_btn_restart_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/btnExit" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/btnExit" to="." method="_on_btn_exit_pressed"]
 [connection signal="pressed" from="VBoxContainer/btnExit/TouchScreenButton" to="." method="_on_btn_exit_pressed"]
