@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cxmbnt1e7j5dx" path="res://Menus/TransitionScreen.tscn" id="2_2as76"]
 
 [node name="SceneManager" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_n1fy5")
 
 [node name="CurrentScene" type="Node" parent="."]
@@ -16,7 +17,7 @@ script = ExtResource("1_n1fy5")
 [node name="ColorRect" parent="TransitionScreen" index="0"]
 mouse_filter = 2
 
-[connection signal="exit_menu" from="CurrentScene/Main" to="." method="_on_main_exit_menu"]
+[connection signal="exit_menu" from="CurrentScene/Main" to="." method="go_to_game"]
 [connection signal="transitioned" from="TransitionScreen" to="." method="_on_transition_screen_transitioned"]
 
 [editable path="TransitionScreen"]

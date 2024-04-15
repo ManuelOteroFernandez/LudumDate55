@@ -18,6 +18,6 @@ func go_to_lost_screen():
 	nextScene = LOST_SCREEN
 	$TransitionScreen.transition()
 
-func _on_main_exit_menu():
+func go_to_game():
 	nextScene = GAME
 	$TransitionScreen.transition()

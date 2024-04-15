@@ -13,9 +13,8 @@ func _on_btn_exit_pressed():
 
 
 func _on_btn_restart_pressed():
-	pass
-	#TODO Hay que modificar scenemanager
-	#get_tree().reload_current_scene()
+	Global.pause()
+	get_tree().current_scene.go_to_game()
 
 
 func _on_btn_resume_pressed():

@@ -31,8 +31,8 @@ func _process(_delta):
 		pause()
 
 func pause():
-	var currentScene = get_tree().current_scene.find_child("Game",true,false)
-	if  currentScene:
+	var currentScene = get_tree().current_scene.get_child(0).get_child(0)
+	if  currentScene.is_in_group("GAME"):
 		var isPaused = get_tree().paused
 		get_tree().paused = not isPaused
 		if not isPaused:
