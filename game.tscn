@@ -57,7 +57,7 @@ offset_left = 953.0
 offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.521569, 0.521569, 0.521569, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="MoveTouchButtons" parent="CanvasLayer" instance=ExtResource("6_rpto6")]
 
