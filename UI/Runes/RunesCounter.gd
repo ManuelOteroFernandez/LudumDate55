@@ -36,5 +36,5 @@ func _on_animated_sprite_2d_animation_finished():
 		$AnimatedSprite2D.play("inv5Idle")
 	elif nRunes == 6:
 		$AnimatedSprite2D.play("inv6Idle")
-	if $AnimatedSprite2D.animation == "inv5Idle":
+	if $AnimatedSprite2D.animation == "inv6Idle":
 		get_tree().current_scene.go_to_win_screen()

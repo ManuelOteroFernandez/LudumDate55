@@ -64,10 +64,10 @@ color = Color(0, 0, 0, 1)
 
 [node name="Life" parent="CanvasLayer" instance=ExtResource("9_x82kn")]
 z_index = 10
-offset_left = 989.0
-offset_top = 17.0
-offset_right = -31.0
-offset_bottom = -485.0
+offset_left = 960.0
+offset_top = 6.0
+offset_right = -56.0
+offset_bottom = -506.0
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("11_f3b0r")]
 anchors_preset = 6

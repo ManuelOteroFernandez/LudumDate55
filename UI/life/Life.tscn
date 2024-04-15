@@ -16,17 +16,21 @@ grow_vertical = 2
 script = ExtResource("1_wmswi")
 
 [node name="Life1" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_ncwal")
 centered = false
 
 [node name="Life2" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_fugbv")
 centered = false
 
 [node name="Life3" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("4_gilc0")
 centered = false
 
 [node name="Life4" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("5_biefm")
 centered = false
