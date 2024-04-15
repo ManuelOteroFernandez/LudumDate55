@@ -12,7 +12,7 @@ script = ExtResource("1_e4fci")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("2_brnjf")
-animation = &"inv1"
+animation = &"new_animation"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_xi177")
