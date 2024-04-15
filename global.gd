@@ -13,15 +13,15 @@ const runesToWin = 6
 
 const pauseScreenScene = preload("res://UI/pauseScreen.tscn")
 var _pauseScreenInstance:Node
-var _runesCollected = 0
+var runesCollected = 0
 func collect_rune():
-	_runesCollected += 1
+	runesCollected += 1
 	on_collect_rune.emit()
-	if _runesCollected >= runesToWin:
+	if runesCollected >= runesToWin:
 		get_tree().current_scene.go_to_win_screen()
 
 func get_runes_collected():
-	return _runesCollected
+	return runesCollected
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS

@@ -3,6 +3,7 @@ extends Node2D
 const GAME = preload("res://game.tscn")
 const LOST_SCREEN = preload("res://lost_screen.tscn")
 const WIN_SCREEN = preload("res://win_screen.tscn")
+const MAIN_MENU_SCREEN = preload("res://Menus/Main.gd")
 var nextScene
 
 func _on_transition_screen_transitioned():
@@ -20,4 +21,9 @@ func go_to_lost_screen():
 
 func go_to_game():
 	nextScene = GAME
+	$TransitionScreen.transition()
+
+
+func go_to_main_menu_screen():
+	nextScene = MAIN_MENU_SCREEN
 	$TransitionScreen.transition()
