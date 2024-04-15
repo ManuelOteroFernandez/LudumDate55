@@ -17,8 +17,6 @@ var runesCollected = 0
 func collect_rune():
 	runesCollected += 1
 	on_collect_rune.emit()
-	if runesCollected >= runesToWin:
-		get_tree().current_scene.go_to_win_screen()
 
 func get_runes_collected():
 	return runesCollected

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dews54neo83t6"]
+[gd_scene load_steps=13 format=3 uid="uid://dews54neo83t6"]
 
 [ext_resource type="PackedScene" uid="uid://dy674427vjppa" path="res://Enviroment/background.tscn" id="1_aa7fl"]
 [ext_resource type="Script" path="res://Generacion.gd" id="2_wifv0"]
@@ -10,9 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dks42so6tkkp4" path="res://UI/Controls/MoveTouchButtons.tscn" id="6_rpto6"]
 [ext_resource type="PackedScene" uid="uid://clqcbp23cleeg" path="res://ArrowMinigame/ArrawMinigame.tscn" id="8_netnm"]
 [ext_resource type="PackedScene" uid="uid://deqmvmu6gg0my" path="res://UI/life/Life.tscn" id="9_x82kn"]
-[ext_resource type="Texture2D" uid="uid://c137tyuadniin" path="res://Runes/RuneGroup.png" id="10_t0uus"]
-[ext_resource type="Script" path="res://UI/NumRunes.gd" id="12_ced3a"]
-[ext_resource type="AudioStream" uid="uid://b5ortpwqpxjhc" path="res://Sounds/powerUp2.ogg" id="13_fnrrp"]
+[ext_resource type="PackedScene" uid="uid://ytp1vn6l45km" path="res://UI/Runes/RunesCounter.tscn" id="11_f3b0r"]
 [ext_resource type="AudioStream" uid="uid://bg6nihipqj2ex" path="res://Music/Phantasmal Platforms.mp3" id="13_k1g3t"]
 
 [node name="Game" type="Node2D"]
@@ -70,30 +68,18 @@ offset_top = 17.0
 offset_right = -31.0
 offset_bottom = -485.0
 
-[node name="RuneGroup" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1048, 261)
-texture = ExtResource("10_t0uus")
-
-[node name="NumRunes" type="RichTextLabel" parent="CanvasLayer"]
+[node name="Control" parent="CanvasLayer" instance=ExtResource("11_f3b0r")]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -81.0
-offset_top = -22.0
-offset_right = -2.0
-offset_bottom = 39.0
+offset_left = -97.0
+offset_top = -100.0
+offset_right = -97.0
+offset_bottom = -100.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 40
-theme_override_font_sizes/bold_font_size = 40
-text = "0/6"
-fit_content = true
-script = ExtResource("12_ced3a")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/NumRunes"]
-stream = ExtResource("13_fnrrp")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_k1g3t")
