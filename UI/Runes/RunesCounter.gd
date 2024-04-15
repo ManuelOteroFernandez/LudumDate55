@@ -41,8 +41,6 @@ func _on_animated_sprite_2d_animation_finished():
 
 
 func _on_animated_sprite_2d_sprite_frames_changed():
-	print($AnimatedSprite2D.animation)
-	print( $AnimatedSprite2D.frame )
 	if $AnimatedSprite2D.animation == "inv1" and $AnimatedSprite2D.frame == 14:
 		$AudioStreamPlayer.play()
 	elif $AnimatedSprite2D.animation == "inv2" and $AnimatedSprite2D.frame == 14:
