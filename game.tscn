@@ -13,7 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://ytp1vn6l45km" path="res://UI/Runes/RunesCounter.tscn" id="11_f3b0r"]
 [ext_resource type="AudioStream" uid="uid://bg6nihipqj2ex" path="res://Music/Phantasmal Platforms.mp3" id="13_k1g3t"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" groups=["GAME"]]
+process_mode = 1
 texture_repeat = 2
 
 [node name="Background" parent="." instance=ExtResource("1_aa7fl")]
