@@ -77,14 +77,8 @@ func _on_player_arrow_just_pressed(value:int):
 			player.receive_health()
 			deactivate()
 	else:
-		#$Timer.stop()
-		#for node in nodes:
-			#node.queue_free()
-			
-		#player.receive_damage(Vector2(0,0))
 		$AudioStreamPlayer.stream = soundLose
 		$AudioStreamPlayer.play()
-		#deactivate()
 
 func _on_player_trapped():
 	activate()
