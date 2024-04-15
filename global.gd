@@ -18,7 +18,7 @@ func collect_rune():
 	_runesCollected += 1
 	on_collect_rune.emit()
 	if _runesCollected >= runesToWin:
-		get_tree().change_scene_to_file("win_screen.tscn")
+		get_tree().current_scene.go_to_win_screen()
 
 func get_runes_collected():
 	return _runesCollected

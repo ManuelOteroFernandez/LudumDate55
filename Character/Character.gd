@@ -30,7 +30,7 @@ func receive_damage(repulsionVelocity:Vector2):
 	lifes -= 1
 	on_receive_damage.emit(lifes)
 	if lifes <= 0:
-		get_tree().change_scene_to_file("res://lose_screen.tscn")
+		get_tree().current_scene.go_to_lost_screen()
 	
 func _process(_delta):
 	if unmove:
