@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dkn1b8f3yv857"]
 
 [ext_resource type="Script" path="res://win_screen.gd" id="1_1gb81"]
-[ext_resource type="Texture2D" uid="uid://bplaqksma7f0x" path="res://UI/text/exit.png" id="2_sapfh"]
+[ext_resource type="Texture2D" uid="uid://doarcub0gwoiw" path="res://UI/text/exitBen.png" id="2_3phy2"]
 [ext_resource type="Texture2D" uid="uid://dqrlwpvfkuc1" path="res://UI/text/exitHover.png" id="3_ewqfx"]
 [ext_resource type="SpriteFrames" uid="uid://bj1rcumtx80an" path="res://UI/Runes/RunesCounter.tres" id="4_rnk51"]
 [ext_resource type="Texture2D" uid="uid://d3obb5nklmmd" path="res://UI/text/invach.png" id="5_gpe7a"]
@@ -23,13 +23,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -47.0
-offset_top = -112.0
-offset_right = 101.0
-offset_bottom = -58.0
+offset_left = -85.0
+offset_top = -111.0
+offset_right = 63.0
+offset_bottom = -57.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("2_sapfh")
+texture_normal = ExtResource("2_3phy2")
 texture_hover = ExtResource("3_ewqfx")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="TextureButton"]
