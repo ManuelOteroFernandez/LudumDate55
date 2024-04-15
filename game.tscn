@@ -15,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://b5ortpwqpxjhc" path="res://Sounds/powerUp2.ogg" id="13_fnrrp"]
 [ext_resource type="AudioStream" uid="uid://bg6nihipqj2ex" path="res://Music/Phantasmal Platforms.mp3" id="13_k1g3t"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Game" type="Node2D"]
 texture_repeat = 2
 
 [node name="Background" parent="." instance=ExtResource("1_aa7fl")]
